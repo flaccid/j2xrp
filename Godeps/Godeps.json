@@ -1,0 +1,8 @@
+{
+	"ImportPath": "github.com/flaccid/j2xrp",
+	"GoVersion": "go1.7.4",
+	"Packages": [
+		"./..."
+	],
+	"Deps": []
+}
