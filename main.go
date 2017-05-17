@@ -19,32 +19,40 @@ type transport struct {
 }
 
 var (
-	Trace   *log.Logger
-	Info    *log.Logger
+	// Trace : logger for tracebacks
+	Trace *log.Logger
+
+	// Info : logger for info level messages
+	Info *log.Logger
+
+	// Warning : logger for warning level messages
 	Warning *log.Logger
-	Error   *log.Logger
+
+	// Error : logger for error level messages
+	Error *log.Logger
 )
 
+// Init : setup the loggers
 func Init(
 	traceHandle io.Writer,
 	infoHandle io.Writer,
 	warningHandle io.Writer,
 	errorHandle io.Writer) {
-		Trace = log.New(traceHandle,
-			"TRACE: ",
-			log.Ldate|log.Ltime|log.Lshortfile)
+	Trace = log.New(traceHandle,
+		"TRACE: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
 
-		Info = log.New(infoHandle,
-			"INFO: ",
-			log.Ldate|log.Ltime|log.Lshortfile)
+	Info = log.New(infoHandle,
+		"INFO: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
 
-		Warning = log.New(warningHandle,
-			"WARNING: ",
-			log.Ldate|log.Ltime|log.Lshortfile)
+	Warning = log.New(warningHandle,
+		"WARNING: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
 
-		Error = log.New(errorHandle,
-			"ERROR: ",
-			log.Ldate|log.Ltime|log.Lshortfile)
+	Error = log.New(errorHandle,
+		"ERROR: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
 }
 
 func (t *transport) RoundTrip(req *http.Request) (resp *http.Response, err error) {
@@ -78,17 +86,17 @@ func (t *transport) RoundTrip(req *http.Request) (resp *http.Response, err error
 var _ http.RoundTripper = &transport{}
 
 func convJ2X(json []byte) []byte {
-  m, err := mxj.NewMapJson(json)
-  if err != nil {
-    Error.Println("error mapping json: ", err)
-  }
+	m, err := mxj.NewMapJson(json)
+	if err != nil {
+		Error.Println("error mapping json: ", err)
+	}
 
-  xml, err := m.Xml()
-  if err != nil {
-    Error.Println("error converting xml: ", err)
-  }
+	xml, err := m.Xml()
+	if err != nil {
+		Error.Println("error converting xml: ", err)
+	}
 
-  return xml
+	return xml
 }
 
 func main() {
