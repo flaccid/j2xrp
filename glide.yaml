@@ -1,0 +1,3 @@
+package: j2xrp
+import:
+- package: github.com/clbanning/mxj

@@ -1,0 +1,6 @@
+hash: a1d0cf83e20a4429c195c2e17bfb307aa20aba04e0621cf65fec381e253b88b0
+updated: 2017-05-17T10:57:44.105789559+10:00
+imports:
+- name: github.com/clbanning/mxj
+  version: 185f4035999c087d40a5bc20c264bfe7f4a99422
+testImports: []
