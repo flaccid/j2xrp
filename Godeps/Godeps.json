@@ -1,8 +1,10 @@
 {
 	"ImportPath": "github.com/flaccid/j2xrp",
-	"GoVersion": "go1.7.4",
-	"Packages": [
-		"./..."
-	],
-	"Deps": []
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/clbanning/mxj"
+		}
+	]
 }
