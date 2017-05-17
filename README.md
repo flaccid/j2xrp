@@ -2,6 +2,14 @@
 
 A reverse proxy that converts a JSON request to an XML request
 
+## Building
+
+    $ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o bin/j2xrp .
+
+### Docker
+
+    $ docker build -t flaccid/j2xrp .
+
 License and Authors
 -------------------
 - Author: Chris Fordham (<chris@fordham-nagy.id.au>)
