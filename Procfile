@@ -1,1 +1,1 @@
-web: bin/j2xrp
+web: make && bin/j2xrp
