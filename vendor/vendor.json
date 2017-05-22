@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "t0hf6KMDwGtxokwpM0OxZcPX/dE=",
+			"path": "github.com/clbanning/mxj",
+			"revision": "185f4035999c087d40a5bc20c264bfe7f4a99422",
+			"revisionTime": "2017-04-20T14:56:28Z"
+		}
+	],
+	"rootPath": "github.com/flaccid/j2xrp"
+}
