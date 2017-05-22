@@ -141,5 +141,12 @@ func main() {
 
 	http.Handle("/", proxy)
 	Info.Println("starting http server")
-	log.Fatal(http.ListenAndServe(":9090", proxy))
+
+	// default to 9090 for listen port if env var not set
+	if len(os.Getenv("PORT")) == 0 {
+		os.Setenv("PORT", "9090")
+	}
+
+	Info.Println("listening for requests on :" + os.Getenv("PORT"))
+	log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), proxy))
 }
