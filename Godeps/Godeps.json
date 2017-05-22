@@ -1,10 +1,12 @@
 {
 	"ImportPath": "github.com/flaccid/j2xrp",
-	"GoVersion": "go1.8",
+	"GoVersion": "go1.7.4",
 	"GodepVersion": "v79",
 	"Deps": [
 		{
-			"ImportPath": "github.com/clbanning/mxj"
+			"ImportPath": "github.com/clbanning/mxj",
+			"Comment": "1.6-1-g185f403",
+			"Rev": "185f4035999c087d40a5bc20c264bfe7f4a99422"
 		}
 	]
 }
