@@ -6,7 +6,7 @@ We host an instance of this application on https://j2xrp.herokuapp.com/.
 
 ## Installation
 
-    $ go install github.com/flaccid/j2xrp
+    $ go get github.com/flaccid/j2xrp && go install github.com/flaccid/j2xrp
 
 ## Usage
 
