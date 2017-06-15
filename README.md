@@ -29,13 +29,19 @@ The resultant compiled binary is located at `bin/github.com/flaccid/j2xrp`.
 
 #### Static Binary
 
-To build a fully static binary (useful for docker):
+To build a fully static 64-bit Linux binary (useful for docker):
 
-    $ CGO_ENABLED=0 go build -a -installsuffix cgo -o bin/j2xrp .
+    $ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo .
 
 #### Docker
 
+Build the static binary per above, then the docker image with:
+
     $ docker build -t flaccid/j2xrp .
+
+Example usage:
+
+    $ docker run -it -p 9090:9090 flaccid/j2xrp -s https api.my.xml
 
 ### Run
 
