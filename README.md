@@ -1,6 +1,6 @@
 # j2xrp
 
-A reverse proxy that converts a JSON request to an XML request
+A reverse proxy that converts a JSON request to an XML request.
 
 We host an instance of this application on https://j2xrp.herokuapp.com/.
 
