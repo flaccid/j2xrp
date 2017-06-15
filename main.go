@@ -21,7 +21,7 @@ func main() {
 			Email: "chris@fordham-nagy.id.au",
 		},
 	}
-	app.Copyright = "(c) 2016 Chris Fordham"
+	app.Copyright = "(c) 2017 Chris Fordham"
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
