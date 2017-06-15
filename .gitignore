@@ -2,3 +2,4 @@
 /.gopath~/
 /test/tests.*
 /test/coverage.*
+/vendor/

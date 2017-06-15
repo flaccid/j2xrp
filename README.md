@@ -4,11 +4,15 @@ A reverse proxy that converts a JSON request to an XML request
 
 We host an instance of this application on https://j2xrp.herokuapp.com/.
 
+## Installation
+
+    $ go install github.com/flaccid/j2xrp
+
 ## Usage
 
 ### Example
 
-With the hosted Heroku application:
+Client request use with the hosted Heroku application:
 
 ```
 curl -vvv \
@@ -19,11 +23,15 @@ curl -vvv \
 
 ### Build
 
+    $ make
+
+The resultant compiled binary is located at `bin/github.com/flaccid/j2xrp`.
+
 #### Static Binary
 
-Build a fully static binary:
+To build a fully static binary (useful for docker):
 
-    $ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o bin/j2xrp .
+    $ CGO_ENABLED=0 go build -a -installsuffix cgo -o bin/j2xrp .
 
 #### Docker
 
@@ -31,7 +39,13 @@ Build a fully static binary:
 
 ### Run
 
-You can run from the main entrypoint locally without building:
+See the usage options with `j2xrp help`. If you have installed the package, make sure `"$GOPATH/bin"` is within your `$PATH`.
+
+A simple example:
+
+    $ j2xrp --scheme https wstunnel10-1.rightscale.com
+
+You can also just run from the main entrypoint locally without building:
 
     $ go run main.go
 

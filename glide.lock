@@ -1,6 +1,14 @@
-hash: a1d0cf83e20a4429c195c2e17bfb307aa20aba04e0621cf65fec381e253b88b0
-updated: 2017-05-17T10:57:44.105789559+10:00
+hash: 4236fdbc527d0151ae9a21bb1fc9e7d841858a6dc35afcab4a47bdc4591a04dd
+updated: 2017-06-15T20:32:53.057732769+10:00
 imports:
 - name: github.com/clbanning/mxj
   version: 185f4035999c087d40a5bc20c264bfe7f4a99422
+- name: github.com/sirupsen/logrus
+  version: 85b1699d505667d13f8ac4478c1debbf85d6c5de
+- name: github.com/urfave/cli
+  version: cf33a9befefdd6c6ea1a236ab6d546e797a62cbf
+- name: golang.org/x/sys
+  version: fb4cac33e3196ff7f507ab9b2d2a44b0142f5b5a
+  subpackages:
+  - unix
 testImports: []

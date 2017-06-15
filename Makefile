@@ -1,4 +1,4 @@
-PACKAGE  = j2xrp
+PACKAGE  = github.com/flaccid/j2xrp
 DATE    ?= $(shell date +%FT%T%z)
 VERSION ?= $(shell git describe --tags --always --dirty --match=v* 2> /dev/null || \
 			cat $(CURDIR)/.version 2> /dev/null || echo v0)

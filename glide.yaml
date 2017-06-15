@@ -1,3 +1,4 @@
-package: j2xrp
+package: github.com/flaccid/j2xrp
 import:
 - package: github.com/clbanning/mxj
+- package: github.com/sirupsen/logrus
