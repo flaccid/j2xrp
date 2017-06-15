@@ -2,7 +2,20 @@
 
 A reverse proxy that converts a JSON request to an XML request
 
+We host an instance of this application on https://j2xrp.herokuapp.com/.
+
 ## Usage
+
+### Example
+
+With the hosted Heroku application:
+
+```
+curl -vvv \
+  -H "Content-Type: application/json" \
+  -X POST -d '{"username":"xyz","password":"xyz"}' \
+    https://j2xrp.herokuapp.com/
+```
 
 ### Build
 
