@@ -36,6 +36,7 @@ func (t *transport) RoundTrip(req *http.Request) (resp *http.Response, err error
 	resp.ContentLength = int64(len(b))
 	resp.Header.Set("Content-Length", strconv.Itoa(len(b)))
 
+	// dump the egress response
 	responseDump, err := httputil.DumpResponse(resp, true)
 	if err != nil {
 		log.Error(err)
@@ -61,9 +62,9 @@ func convJ2X(json []byte) []byte {
 	return xml
 }
 
-// Serve : creates a reverse proxy to forward XML requests converted to JSON
+// Serve : initialises a reverse proxy accepting JSON, forwarding as XML
 func Serve(scheme string, host string, listenPort string) {
-	// create a reverse proxy to rightscale
+	// create a reverse proxy to the desired backend host
 	proxy := httputil.NewSingleHostReverseProxy(&url.URL{
 		Scheme: scheme,
 		Host:   host,
