@@ -28,6 +28,7 @@ func main() {
 			Name:  "port, p",
 			Value: "9090",
 			Usage: "listen port",
+			EnvVar: "PORT",
 		},
 		cli.StringFlag{
 			Name:  "scheme, s",
