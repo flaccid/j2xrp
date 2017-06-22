@@ -2,7 +2,7 @@
 
 A reverse proxy that converts a JSON request to an XML request.
 
-We host an instance of this application on https://j2xrp.herokuapp.com/.
+An instance of this application is hosted on https://j2xrp.herokuapp.com/.
 
 ## Installation
 
