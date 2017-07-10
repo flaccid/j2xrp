@@ -25,9 +25,9 @@ func main() {
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name:  "port, p",
-			Value: "9090",
-			Usage: "listen port",
+			Name:   "port, p",
+			Value:  "9090",
+			Usage:  "listen port",
 			EnvVar: "PORT",
 		},
 		cli.StringFlag{
