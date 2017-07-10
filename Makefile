@@ -50,6 +50,16 @@ GO2XUNIT = $(BIN)/go2xunit
 $(BIN)/go2xunit: | $(BASE) ; $(info $(M) building go2xunit…)
 	$Q go get github.com/tebeka/go2xunit
 
+# Build Static
+.PHONY: static
+static: fmt lint vendor | $(BASE) ; $(info $(M) building static executable…) @ ## Build static program binary
+	$Q cd $(BASE) && CGO_ENABLED=0 $(GO) build \
+		-a \
+		-installsuffix cgo \
+		-tags release \
+		-ldflags '-X $(PACKAGE)/cmd.Version=$(VERSION) -X $(PACKAGE)/cmd.BuildDate=$(DATE)' \
+		-o bin/$(PACKAGE) main.go
+
 # Tests
 
 TEST_TARGETS := test-default test-bench test-short test-verbose test-race
