@@ -1,6 +1,11 @@
 pipeline:
-  backend:
+  binary:
     image: golang
     commands:
       - curl https://glide.sh/get | sh
       - make
+  docker:
+    image: plugins/docker
+    repo: flaccid/j2xrp
+    username: flaccid
+    secrets: [ docker_password ]
