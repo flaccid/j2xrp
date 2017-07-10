@@ -1,6 +1,6 @@
 FROM scratch
 
-COPY j2xrp /usr/local/bin/j2xrp
+COPY bin/github.com/flaccid/j2xrp /usr/local/bin/j2xrp
 
 WORKDIR /usr/local/bin
 

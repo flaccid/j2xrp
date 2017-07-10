@@ -3,9 +3,8 @@ pipeline:
     image: golang
     commands:
       - curl https://glide.sh/get | sh
-      - make
-      # build the static binary in the root for docker
-      - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo .
+      # build the static binary, needed for docker
+      - make static
   docker:
     image: plugins/docker
     repo: flaccid/j2xrp
