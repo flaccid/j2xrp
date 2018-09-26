@@ -47,6 +47,7 @@ func (t *transport) RoundTrip(req *http.Request) (resp *http.Response, err error
 }
 
 var _ http.RoundTripper = &transport{}
+var xml []byte
 
 func convJ2X(json []byte) []byte {
 	m, err := mxj.NewMapJson(json)
@@ -82,11 +83,16 @@ func Serve(scheme string, host string, listenPort string) {
 		// request body JSON->XML happens here
 		// we only care about body content if this is a PUT or POST
 		if req.Method == "PUT" || req.Method == "POST" {
-			// stream the body and convert the expected JSON to XML
 			buf := new(bytes.Buffer)
-			buf.ReadFrom(req.Body)
-			s := buf.String()
-			xml := convJ2X([]byte(s))
+			if req.ContentLength > 0 {
+				// stream the body and convert the expected JSON to XML
+				buf.ReadFrom(req.Body)
+				s := buf.String()
+				xml = convJ2X([]byte(s))
+
+			} else {
+				xml = []byte(`<?xml version="1.0" ?>`)
+			}
 			req.Body = ioutil.NopCloser(strings.NewReader(string(xml)))
 			req.ContentLength = int64(len(string(xml)))
 		}
